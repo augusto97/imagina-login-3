@@ -188,6 +188,8 @@ function il_generate_dynamic_styles() {
                 $image_url = wp_get_attachment_image_url($body_bg_image, 'full');
                 if ($image_url) {
                     $css .= '--background-fallback: url(' . esc_url($image_url) . ');';
+                    $css .= '--bg-size: cover;';
+                    $css .= '--bg-repeat: no-repeat;';
                 }
             }
             break;
@@ -216,6 +218,8 @@ function il_generate_dynamic_styles() {
                 $image_url = wp_get_attachment_image_url($logo_bg_image, 'full');
                 if ($image_url) {
                     $css .= '--logo-background-fallback: url(' . esc_url($image_url) . ');';
+                    $css .= '--logo-bg-size: cover;';
+                    $css .= '--logo-bg-repeat: no-repeat;';
                     $has_logo_image = true;
                 }
             }
