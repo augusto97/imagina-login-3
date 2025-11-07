@@ -15,9 +15,9 @@ body.login {
     min-height: 100vh;
     margin: 0;
     background: var(--background-fallback, var(--primary-color, #009bde));
-    background-size: cover;
+    background-size: var(--bg-size, cover);
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: var(--bg-repeat, no-repeat);
     background-attachment: fixed;
     color: #666;
     padding: 20px;
@@ -90,9 +90,9 @@ body.login div#login h1 {
     grid-area: logo;
     box-sizing: border-box;
     background: var(--logo-background-fallback, #f9f9f9);
-    background-size: cover;
+    background-size: var(--logo-bg-size, cover);
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: var(--logo-bg-repeat, no-repeat);
     margin: 0;
     display: flex;
     align-items: center;
