@@ -1,0 +1,189 @@
+/*
+ * Template: Sidebar Half (50/50 Right)
+ * Descripción: Sidebar que ocupa 50% del ancho (derecha), el otro 50% es fondo
+ * Ideal para: Diseños equilibrados, aplicaciones empresariales
+ */
+
+body.login.template-sidebar-half {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: 100vh;
+}
+
+body.login.template-sidebar-half div#login {
+    width: 100%;
+    max-width: 50vw; /* 50% del ancho en desktop */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+        "logo"
+        "form"
+        "messages"
+        "links";
+    border-radius: 0;
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    position: relative;
+    background: white;
+}
+
+body.login.template-sidebar-half div#login h1 {
+    grid-area: logo;
+    min-height: auto;
+    padding: 60px 50px 30px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+    border-bottom: 1px solid #e3e8ee;
+}
+
+body.login.template-sidebar-half div#login h1 a {
+    max-width: 180px;
+    max-height: 180px;
+}
+
+body.login.template-sidebar-half div#login form#loginform,
+body.login.template-sidebar-half div#login form#lostpasswordform,
+body.login.template-sidebar-half div#login form#magicloginform {
+    grid-area: form;
+    padding: 60px 50px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Mensajes */
+body.login.template-sidebar-half .login p.message,
+body.login.template-sidebar-half .login #login_error,
+body.login.template-sidebar-half #login-message,
+body.login.template-sidebar-half .notice.notice-info.message {
+    margin: 0;
+}
+
+/* Footer */
+body.login.template-sidebar-half .login #nav,
+body.login.template-sidebar-half .login #backtoblog {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 25px 50px;
+}
+
+/* Magic Login */
+body.login.template-sidebar-half.login-action-checkemail div#login h1 {
+    padding: 50px 50px 25px;
+}
+
+/* Tablet - reducir a 60% */
+@media (max-width: 968px) {
+    body.login.template-sidebar-half div#login {
+        max-width: 60vw;
+    }
+
+    body.login.template-sidebar-half div#login h1 {
+        padding: 50px 40px 25px;
+    }
+
+    body.login.template-sidebar-half div#login h1 a {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    body.login.template-sidebar-half div#login form#loginform,
+    body.login.template-sidebar-half div#login form#lostpasswordform,
+    body.login.template-sidebar-half div#login form#magicloginform {
+        padding: 50px 40px;
+    }
+
+    body.login.template-sidebar-half .login #nav,
+    body.login.template-sidebar-half .login #backtoblog {
+        padding: 20px 40px;
+    }
+}
+
+/* Mobile - full width */
+@media (max-width: 768px) {
+    body.login.template-sidebar-half {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    body.login.template-sidebar-half div#login {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    body.login.template-sidebar-half div#login h1 {
+        padding: 40px 30px 20px;
+    }
+
+    body.login.template-sidebar-half div#login h1 a {
+        max-width: 120px;
+        max-height: 120px;
+    }
+
+    body.login.template-sidebar-half div#login form#loginform,
+    body.login.template-sidebar-half div#login form#lostpasswordform,
+    body.login.template-sidebar-half div#login form#magicloginform {
+        padding: 35px 25px;
+    }
+
+    body.login.template-sidebar-half .login #nav,
+    body.login.template-sidebar-half .login #backtoblog {
+        padding: 16px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.login.template-sidebar-half {
+        padding: 0;
+    }
+
+    body.login.template-sidebar-half div#login h1 {
+        padding: 35px 25px 18px;
+    }
+
+    body.login.template-sidebar-half div#login h1 a {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    body.login.template-sidebar-half div#login form#loginform,
+    body.login.template-sidebar-half div#login form#lostpasswordform,
+    body.login.template-sidebar-half div#login form#magicloginform {
+        padding: 30px 20px;
+    }
+
+    body.login.template-sidebar-half .login #nav,
+    body.login.template-sidebar-half .login #backtoblog {
+        padding: 14px 20px;
+    }
+}
+
+/* Mejora visual para scroll */
+body.login.template-sidebar-half div#login::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.login.template-sidebar-half div#login::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+body.login.template-sidebar-half div#login::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+body.login.template-sidebar-half div#login::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}

@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Imagina Login
  * Plugin URI:  https://imaginawp.com
- * Description: Customized wp login with 8 professional templates and advanced background options
- * Version:     2.3.0
+ * Description: Customized wp login with 9 professional templates and advanced background options
+ * Version:     2.3.1
  * Author:      IMAGINA WP
  * Author URI:  https://imaginawp.com/
  * License:     GPLv2 or later
@@ -309,19 +309,13 @@ function my_custom_login_assets() {
         'imagina-login',
         plugin_dir_url( __FILE__ ) . 'css/styles.css',
         array(),
-        '2.3.0'
+        '2.3.1'
     );
 
     // Cargar CSS del template seleccionado
     $template = $cached_styles['template'];
     $template_file = '';
     switch ($template) {
-        case 'minimal':
-            $template_file = 'template-minimal.css';
-            break;
-        case 'top-logo':
-            $template_file = 'template-top-logo.css';
-            break;
         case 'split':
             $template_file = 'template-split.css';
             break;
@@ -333,6 +327,15 @@ function my_custom_login_assets() {
             break;
         case 'sidebar':
             $template_file = 'template-sidebar.css';
+            break;
+        case 'sidebar-left':
+            $template_file = 'template-sidebar-left.css';
+            break;
+        case 'sidebar-half':
+            $template_file = 'template-sidebar-half.css';
+            break;
+        case 'sidebar-half-left':
+            $template_file = 'template-sidebar-half-left.css';
             break;
         case 'boxed':
             $template_file = 'template-boxed.css';
@@ -347,7 +350,7 @@ function my_custom_login_assets() {
         'imagina-login-template',
         plugin_dir_url( __FILE__ ) . 'css/templates/' . $template_file,
         array('imagina-login'),
-        '2.3.0'
+        '2.3.1'
     );
 
     // Agregar clase del template al body
@@ -801,11 +804,11 @@ function my_custom_login_assets() {
             console.log('🔌 MutationObserver desconectado (optimización de performance)');
         }, 3000);
 
-        console.log('🎉 Imagina Login v2.3.0 inicializado completamente');
+        console.log('🎉 Imagina Login v2.3.1 inicializado completamente');
     });
     ";
     
-    wp_register_script('imagina-login-toggle', '', array('jquery'), '2.3.0', true);
+    wp_register_script('imagina-login-toggle', '', array('jquery'), '2.3.1', true);
     wp_enqueue_script('imagina-login-toggle');
     wp_add_inline_script('imagina-login-toggle', $script);
 }
@@ -1018,13 +1021,33 @@ function il_settings_page_html() {
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 2: Minimalista -->
-                            <label class="imagina-template-card <?php echo $selected_template === 'minimal' ? 'active' : ''; ?>">
-                                <input type="radio" name="il_login_template" value="minimal" <?php checked($selected_template, 'minimal'); ?>>
+                            <!-- Template 2: Sidebar Izquierda -->
+                            <label class="imagina-template-card <?php echo $selected_template === 'sidebar-left' ? 'active' : ''; ?>">
+                                <input type="radio" name="il_login_template" value="sidebar-left" <?php checked($selected_template, 'sidebar-left'); ?>>
                                 <div class="template-preview">
-                                    <div class="template-mockup minimal-mockup">
-                                        <div class="mockup-logo-mini"></div>
-                                        <div class="mockup-form-centered">
+                                    <div class="template-mockup sidebar-mockup" style="grid-template-columns: 1fr 2fr;">
+                                        <div class="mockup-sidebar-panel" style="box-shadow: 2px 0 8px rgba(0,0,0,0.1); order: 1;">
+                                            <div class="mock-input"></div>
+                                            <div class="mock-input"></div>
+                                            <div class="mock-button"></div>
+                                        </div>
+                                        <div class="mockup-sidebar-bg" style="order: 2;"></div>
+                                    </div>
+                                </div>
+                                <div class="template-info">
+                                    <h3>◀️ Sidebar Izquierda</h3>
+                                    <p>Panel lateral izquierdo full height. Variante invertida del sidebar.</p>
+                                </div>
+                                <span class="template-check">✓</span>
+                            </label>
+
+                            <!-- Template 3: Sidebar 50/50 Derecha -->
+                            <label class="imagina-template-card <?php echo $selected_template === 'sidebar-half' ? 'active' : ''; ?>">
+                                <input type="radio" name="il_login_template" value="sidebar-half" <?php checked($selected_template, 'sidebar-half'); ?>>
+                                <div class="template-preview">
+                                    <div class="template-mockup sidebar-mockup" style="grid-template-columns: 1fr 1fr;">
+                                        <div class="mockup-sidebar-bg"></div>
+                                        <div class="mockup-sidebar-panel">
                                             <div class="mock-input"></div>
                                             <div class="mock-input"></div>
                                             <div class="mock-button"></div>
@@ -1032,33 +1055,33 @@ function il_settings_page_html() {
                                     </div>
                                 </div>
                                 <div class="template-info">
-                                    <h3>✨ Centrado Minimalista</h3>
-                                    <p>Todo fluye en una columna. Perfecto para startups y blogs modernos.</p>
+                                    <h3>⚖️ Sidebar 50/50 Derecha</h3>
+                                    <p>Diseño equilibrado 50/50 con sidebar derecho. Perfecto para balance visual.</p>
                                 </div>
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 3: Logo Superior -->
-                            <label class="imagina-template-card <?php echo $selected_template === 'top-logo' ? 'active' : ''; ?>">
-                                <input type="radio" name="il_login_template" value="top-logo" <?php checked($selected_template, 'top-logo'); ?>>
+                            <!-- Template 4: Sidebar 50/50 Izquierda -->
+                            <label class="imagina-template-card <?php echo $selected_template === 'sidebar-half-left' ? 'active' : ''; ?>">
+                                <input type="radio" name="il_login_template" value="sidebar-half-left" <?php checked($selected_template, 'sidebar-half-left'); ?>>
                                 <div class="template-preview">
-                                    <div class="template-mockup toplogo-mockup">
-                                        <div class="mockup-logo-top"></div>
-                                        <div class="mockup-form-centered">
+                                    <div class="template-mockup sidebar-mockup" style="grid-template-columns: 1fr 1fr;">
+                                        <div class="mockup-sidebar-panel" style="box-shadow: 2px 0 8px rgba(0,0,0,0.1); order: 1;">
                                             <div class="mock-input"></div>
                                             <div class="mock-input"></div>
                                             <div class="mock-button"></div>
                                         </div>
+                                        <div class="mockup-sidebar-bg" style="order: 2;"></div>
                                     </div>
                                 </div>
                                 <div class="template-info">
-                                    <h3>🎯 Logo Superior</h3>
-                                    <p>Banner superior con logo. Excelente para e-commerce y portfolios.</p>
+                                    <h3>⚖️ Sidebar 50/50 Izquierda</h3>
+                                    <p>Diseño equilibrado 50/50 con sidebar izquierdo. Balance con énfasis izquierdo.</p>
                                 </div>
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 4: Pantalla Dividida -->
+                            <!-- Template 5: Pantalla Dividida -->
                             <label class="imagina-template-card <?php echo $selected_template === 'split' ? 'active' : ''; ?>">
                                 <input type="radio" name="il_login_template" value="split" <?php checked($selected_template, 'split'); ?>>
                                 <div class="template-preview">
@@ -1078,7 +1101,7 @@ function il_settings_page_html() {
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 5: Full Screen -->
+                            <!-- Template 6: Full Screen -->
                             <label class="imagina-template-card <?php echo $selected_template === 'fullscreen' ? 'active' : ''; ?>">
                                 <input type="radio" name="il_login_template" value="fullscreen" <?php checked($selected_template, 'fullscreen'); ?>>
                                 <div class="template-preview">
@@ -1099,7 +1122,7 @@ function il_settings_page_html() {
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 6: Glassmorphism -->
+                            <!-- Template 7: Glassmorphism -->
                             <label class="imagina-template-card <?php echo $selected_template === 'glass' ? 'active' : ''; ?>">
                                 <input type="radio" name="il_login_template" value="glass" <?php checked($selected_template, 'glass'); ?>>
                                 <div class="template-preview glass-preview">
@@ -1119,7 +1142,7 @@ function il_settings_page_html() {
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 7: Sidebar -->
+                            <!-- Template 8: Sidebar Derecha -->
                             <label class="imagina-template-card <?php echo $selected_template === 'sidebar' ? 'active' : ''; ?>">
                                 <input type="radio" name="il_login_template" value="sidebar" <?php checked($selected_template, 'sidebar'); ?>>
                                 <div class="template-preview">
@@ -1133,13 +1156,13 @@ function il_settings_page_html() {
                                     </div>
                                 </div>
                                 <div class="template-info">
-                                    <h3>📱 Sidebar Lateral</h3>
-                                    <p>Panel lateral full height. Perfecto para intranets y sistemas de gestión.</p>
+                                    <h3>▶️ Sidebar Derecha</h3>
+                                    <p>Panel lateral derecho full height. Perfecto para intranets y sistemas de gestión.</p>
                                 </div>
                                 <span class="template-check">✓</span>
                             </label>
 
-                            <!-- Template 8: Boxed -->
+                            <!-- Template 9: Boxed -->
                             <label class="imagina-template-card <?php echo $selected_template === 'boxed' ? 'active' : ''; ?>">
                                 <input type="radio" name="il_login_template" value="boxed" <?php checked($selected_template, 'boxed'); ?>>
                                 <div class="template-preview">
