@@ -1,14 +1,14 @@
 === Imagina Login ===
 Contributors: augusto97
-Tags: login, custom login, login page, login background, login logo, login templates, fullscreen login
+Tags: login, custom login, login page, login background, login logo, login templates, fullscreen login, sidebar login
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Personaliza la página de inicio de sesión de WordPress con 8 diseños profesionales, logo, imágenes de fondo, videos y colores de marca.
+Personaliza la página de inicio de sesión de WordPress con 9 diseños profesionales, logo, imágenes de fondo, videos y colores de marca.
 
 == Description ==
 
@@ -16,14 +16,15 @@ Transforma por completo la aburrida página de inicio de sesión de WordPress (`
 
 **Características principales:**
 
-* **🎭 8 Diseños Profesionales:** Elige entre 8 templates modernos que se adaptan a diferentes estilos de marca:
+* **🎭 9 Diseños Profesionales:** Elige entre 9 templates modernos que se adaptan a diferentes estilos de marca:
   - Clásico Dos Columnas (empresas corporativas)
-  - Centrado Minimalista (startups y blogs)
-  - Logo Superior (e-commerce y portfolios)
+  - Sidebar Izquierda (variante invertida full height)
+  - Sidebar 50/50 Derecha (diseño equilibrado)
+  - Sidebar 50/50 Izquierda (balance con énfasis izquierdo)
   - Pantalla Dividida 60/40 (agencias creativas)
   - Pantalla Completa (aplicaciones web y SaaS)
   - Glassmorphism (startups tech y apps premium)
-  - Sidebar Lateral (intranets y sistemas de gestión)
+  - Sidebar Derecha (panel lateral full height)
   - Centrado Compacto (sitios minimalistas)
 * **🖼️ Fondos Personalizables:** Usa colores sólidos, degradados lineales/radiales, imágenes o videos de fondo tanto para la página como para el área del logo.
 * **🎨 Sistema de Colores Completo:** Personaliza colores de etiquetas, botones, enlaces y estados hover de forma independiente o usa los colores de tu tema.
@@ -69,6 +70,19 @@ Sí, el plugin funciona correctamente en instalaciones de WordPress Multisite.
 5.  Ejemplo del selector de contraseña visible/oculto.
 
 == Changelog ==
+
+= 2.3.1 =
+* 🎨 **MEJORA:** Removidos templates muy similares (Centrado Minimalista y Logo Superior dejando solo Boxed)
+* ✅ **NUEVO:** Sidebar Izquierda - variante invertida del sidebar con panel a la izquierda
+* ✅ **NUEVO:** Sidebar 50/50 Derecha - diseño equilibrado con sidebar ocupando 50% del ancho
+* ✅ **NUEVO:** Sidebar 50/50 Izquierda - diseño equilibrado con sidebar izquierdo
+* 🐛 **FIX:** Template Full Screen ahora usa correctamente los fondos personalizables
+* 🐛 **FIX:** Full Screen con backgrounds transparentes para mostrar fondo del body
+* 🎨 **MEJORA:** Mejor visibilidad de labels y enlaces en Full Screen con text-shadow
+* 🎨 **MEJORA:** Footer con backdrop-filter en Full Screen para mejor legibilidad
+* 📱 **MEJORA:** Todas las variantes sidebar responsive (50% en desktop/tablet, 100% en móvil)
+* 📦 **ACTUALIZADO:** Plugin ahora tiene 9 templates profesionales en total
+* 📦 **ACTUALIZADO:** Versión del plugin a 2.3.1
 
 = 2.3.0 =
 * 🎭 **NUEVO:** 4 templates adicionales (ahora 8 en total)
