@@ -270,33 +270,14 @@ add_action('updated_option', 'il_handle_option_update', 10, 1);
  */
 function il_inject_critical_styles() {
     $cached_styles = il_get_cached_dynamic_styles();
-    
+
     echo '<style id="imagina-login-critical-css">' . $cached_styles['css'] . '</style>';
-    
+
     // Preload del CSS principal
-    echo '<link rel="preload" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.2.2" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
-    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.2.2"></noscript>';
-    
-    // Preload de imágenes importantes si existen
-    if ($cached_styles['body_bg_type'] === 'image') {
-        $body_bg_image = get_option('il_body_background_image');
-        if ($body_bg_image) {
-            $image_url = wp_get_attachment_image_url($body_bg_image, 'full');
-            if ($image_url) {
-                echo '<link rel="preload" href="' . esc_url($image_url) . '" as="image">';
-            }
-        }
-    }
-    
-    if ($cached_styles['logo_bg_type'] === 'image') {
-        $logo_bg_image = get_option('il_logo_background_image');
-        if ($logo_bg_image) {
-            $image_url = wp_get_attachment_image_url($logo_bg_image, 'full');
-            if ($image_url) {
-                echo '<link rel="preload" href="' . esc_url($image_url) . '" as="image">';
-            }
-        }
-    }
+    echo '<link rel="preload" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.1" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.1"></noscript>';
+
+    // NO precargar imágenes para evitar que se vean antes de cargar todo
 }
 add_action('login_head', 'il_inject_critical_styles', 1);
 

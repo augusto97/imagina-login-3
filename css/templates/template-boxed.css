@@ -34,7 +34,10 @@ body.login.template-boxed div#login h1 {
     grid-area: logo;
     min-height: 140px;
     padding: 40px 30px 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--logo-background-fallback, #f9f9f9);
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
     position: relative;
 }
 
