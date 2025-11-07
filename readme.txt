@@ -3,7 +3,7 @@ Contributors: augusto97
 Tags: login, custom login, login page, login background, login logo, login templates, fullscreen login, sidebar login
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -70,6 +70,17 @@ Sí, el plugin funciona correctamente en instalaciones de WordPress Multisite.
 5.  Ejemplo del selector de contraseña visible/oculto.
 
 == Changelog ==
+
+= 2.3.2 =
+* 🐛 **FIX:** Resuelto scroll horizontal y vertical en sidebar templates alineados a la derecha
+* 🐛 **FIX:** Eliminados gradientes hardcodeados - ahora todos controlables desde panel admin
+* 🐛 **FIX:** Fondos de imagen ahora usan background-size: cover sin repetición
+* 🐛 **FIX:** Removido flash de imagen de fallback antes de carga completa
+* 🎨 **MEJORA:** Agregado !important para forzar background-size: cover en todos los templates
+* 🎨 **MEJORA:** Consistencia de widths entre sidebar templates izquierdos y derechos
+* 🎨 **MEJORA:** Todos los fondos de logo ahora personalizables vía CSS variables
+* ⚡ **OPTIMIZACIÓN:** Removidos preloads de imágenes que causaban flash visual
+* 📦 **ACTUALIZADO:** Versión del plugin a 2.3.2
 
 = 2.3.1 =
 * 🎨 **MEJORA:** Removidos templates muy similares (Centrado Minimalista y Logo Superior dejando solo Boxed)

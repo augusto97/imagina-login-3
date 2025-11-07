@@ -3,7 +3,7 @@
  * Plugin Name: Imagina Login
  * Plugin URI:  https://imaginawp.com
  * Description: Customized wp login with 9 professional templates and advanced background options
- * Version:     2.3.1
+ * Version:     2.3.2
  * Author:      IMAGINA WP
  * Author URI:  https://imaginawp.com/
  * License:     GPLv2 or later
@@ -274,8 +274,8 @@ function il_inject_critical_styles() {
     echo '<style id="imagina-login-critical-css">' . $cached_styles['css'] . '</style>';
 
     // Preload del CSS principal
-    echo '<link rel="preload" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.1" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
-    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.1"></noscript>';
+    echo '<link rel="preload" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.2" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(__FILE__) . 'css/styles.css?v=2.3.2"></noscript>';
 
     // NO precargar imágenes para evitar que se vean antes de cargar todo
 }
@@ -294,7 +294,7 @@ function my_custom_login_assets() {
         'imagina-login',
         plugin_dir_url( __FILE__ ) . 'css/styles.css',
         array(),
-        '2.3.1'
+        '2.3.2'
     );
 
     // Cargar CSS del template seleccionado
@@ -335,7 +335,7 @@ function my_custom_login_assets() {
         'imagina-login-template',
         plugin_dir_url( __FILE__ ) . 'css/templates/' . $template_file,
         array('imagina-login'),
-        '2.3.1'
+        '2.3.2'
     );
 
     // Agregar clase del template al body
@@ -789,11 +789,11 @@ function my_custom_login_assets() {
             console.log('🔌 MutationObserver desconectado (optimización de performance)');
         }, 3000);
 
-        console.log('🎉 Imagina Login v2.3.1 inicializado completamente');
+        console.log('🎉 Imagina Login v2.3.2 inicializado completamente');
     });
     ";
-    
-    wp_register_script('imagina-login-toggle', '', array('jquery'), '2.3.1', true);
+
+    wp_register_script('imagina-login-toggle', '', array('jquery'), '2.3.2', true);
     wp_enqueue_script('imagina-login-toggle');
     wp_add_inline_script('imagina-login-toggle', $script);
 }
